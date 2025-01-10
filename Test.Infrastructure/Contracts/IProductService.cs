@@ -8,7 +8,7 @@ namespace Test.Infrastructure.Contracts;
 public interface IProductService
 {
     Task<IEnumerable<ProductVM>> GetAllProductsAsync();
-    Task<ProductVM> GetProductByIdAsync(int id);
+    Task<ProductVM> GetProductByIdAsync(string id);
     Task<ProductVM> CreateProductAsync(ProductIM productInputModel);
     Task<ProductVM> UpdateProductAsync(int id, ProductUM productUpdateModel);
     Task<bool> DeleteProductAsync(int id);

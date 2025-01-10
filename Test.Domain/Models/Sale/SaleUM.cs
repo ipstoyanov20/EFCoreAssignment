@@ -1,10 +1,14 @@
-﻿namespace Test.Domain.Models.Sale;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Test.Domain.Models.Sale;
 
 public class SaleUM
 {
-    public int SaleId { get; set; }
-    public int CustomerId { get; set; }
-    public int ProductId { get; set; }
+    public string SaleId { get; set; }
+    public string CustomerId { get; set; }
+    
+    public string ProductId { get; set; }
     public int Quantity { get; set; }
     public DateTime SaleDate { get; set; }
 }

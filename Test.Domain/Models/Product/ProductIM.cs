@@ -1,4 +1,5 @@
-﻿namespace Test.Domain.Models.Product;
+﻿
+namespace Test.Domain.Models.Product;
 
 public class ProductIM
 {
@@ -6,5 +7,6 @@ public class ProductIM
     public decimal Price { get; set; }
     public int Stock { get; set; }
     public string Description { get; set; }
-    public int CategoryId { get; set; }
+    
+    public string CategoryId { get; set; }
 }

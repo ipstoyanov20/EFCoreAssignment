@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Test.Data.Data;
+using Test.Data.Models;
 using Test.Domain.Models.Sale;
 using Test.Infrastructure.Contracts;
 
@@ -33,7 +35,7 @@ public class SaleService : ISaleService
             .ToListAsync();
     }
 
-    public async Task<SaleVM> GetSaleByIdAsync(int id)
+    public async Task<SaleVM> GetSaleByIdAsync(string id)
     {
         var sale = await _context.Sales
             .Include(s => s.Product)
@@ -54,7 +56,7 @@ public class SaleService : ISaleService
 
     public async Task<SaleVM> CreateSaleAsync(SaleIM saleInputModel)
     {
-        var sale = new Test.Data.Models.Sale
+        var sale = new Sale
         {
             ProductId = saleInputModel.ProductId,
             CustomerId = saleInputModel.CustomerId,

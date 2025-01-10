@@ -26,7 +26,7 @@ namespace Test.WebHost.Controllers
 
         // GET: api/sale/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(string id)
         {
             var sale = await _saleService.GetSaleByIdAsync(id);
             if (sale == null) return NotFound();

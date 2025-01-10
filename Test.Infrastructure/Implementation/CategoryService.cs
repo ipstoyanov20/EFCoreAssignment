@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Test.Domain.Models.Category;
 using Test.Data.Data;
-using Test.Domain.Models.Customer;
 using Test.Infrastructure.Contracts;
 
 namespace Test.Infrastructure.Implementation

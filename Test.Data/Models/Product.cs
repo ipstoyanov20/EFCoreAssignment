@@ -1,13 +1,32 @@
-﻿namespace Test.Data.Models;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Test.Data.Models;
 
 public class Product
 {
-    public int ProductId { get; set; }
-    public int CategoryId { get; set; }
-    public string Name { get; set; }
-    public decimal Price { get; set; }
-    public int Stock { get; set; }
-    public string Description { get; set; }
+    [Key]
+    public string ProductId { get; set; } = Guid.NewGuid().ToString();
 
-    public Category Category { get; set; } 
+    [Required]
+    public string CategoryId { get; set; }
+
+    [ForeignKey(nameof(CategoryId))]
+    public Category Category { get; set; }
+
+    [Required]
+    [StringLength(100, ErrorMessage = "Name cannot exceed 100 characters.")]
+    public string Name { get; set; }
+
+    [Required]
+    [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")]
+    public decimal Price { get; set; }
+
+    [Required]
+    [Range(0, int.MaxValue, ErrorMessage = "Stock cannot be negative.")]
+    public int Stock { get; set; }
+
+    [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
+    public string Description { get; set; }
 }

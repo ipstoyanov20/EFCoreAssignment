@@ -8,7 +8,7 @@ namespace Test.Infrastructure.Contracts;
 public interface ISaleService
 {
     Task<IEnumerable<SaleVM>> GetAllSalesAsync();
-    Task<SaleVM> GetSaleByIdAsync(int id);
+    Task<SaleVM> GetSaleByIdAsync(string id);
     Task<SaleVM> CreateSaleAsync(SaleIM saleInputModel);
     Task<SaleVM> UpdateSaleAsync(int id, SaleUM saleUpdateModel);
     Task<bool> DeleteSaleAsync(int id);

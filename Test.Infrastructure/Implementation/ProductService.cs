@@ -33,7 +33,7 @@ public class ProductService : IProductService
             .ToListAsync();
     }
 
-    public async Task<ProductVM> GetProductByIdAsync(int id)
+    public async Task<ProductVM> GetProductByIdAsync(string id)
     {
         var product = await _context.Products
             .Include(p => p.Category)

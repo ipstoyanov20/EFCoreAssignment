@@ -1,8 +1,9 @@
-﻿namespace Test.Domain.Models.Customer;
+﻿
+namespace Test.Domain.Models.Customer;
 
 public class CustomerVM
 {
-    public int CustomerId { get; set; }
+    public string CustomerId { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
